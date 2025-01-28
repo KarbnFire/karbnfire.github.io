@@ -1,29 +1,110 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import {RouterView} from 'vue-router'
+import Card from 'primevue/card';
+import Button from 'primevue/button';
+import 'primeicons/primeicons.css';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+  <div class="root">
+    <header>
+      <div class="wrapper">
+        <nav>
+        </nav>
+      </div>
+    </header>
+    <div class="username-main">
+      <h1 class="username">Karbn</h1>
     </div>
-  </header>
+    <div class="description-main">
+    </div>
+    <div class="socials-cards">
+      <Card class="social-card">
+        <template #title>YouTube</template>
+        <template #content>
+          <iframe src="http://www.youtube.com/embed/videoseries?list=UU9FThw_xrLXcXvN99JB2YGw" width="480"
+                  height="400"></iframe>
+        </template>
+      </Card>
+      <Card class="social-card">
 
-  <RouterView />
+        <template #title>Discord</template>
+
+        <template #content>
+          <div class="discord-friend-div">
+            <span class="add-me-discord">Karbn</span>
+            <Button class="add-me-discord-button" icon="pi pi-user" label="Add as friend" href="https://discord.com/user/530975000778506273"/>
+          </div>
+        </template>
+      </Card>
+    </div>
+  </div>
+
+
+  <RouterView/>
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+.root {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.username-main {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 100%;
+  flex-grow: 1;
+}
+
+.username {
+  font-size: 10em;
+  font-family: "Orbitron", serif;
+  text-align: center;
+}
+
+.description-main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.socials-cards {
+  display: flex;
+  flex-grow: 1;
+}
+
+.social-card {
+  background-color: #2c3e50;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 50%
+}
+
+.discord-friend-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-me-discord {
+  font-size: 3em;
+  padding-left: 10px;
+}
+
+.add-me-discord-button {
+  width: 30%;
+  height: 50%;
+
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
+  flex: 0 0 100%
 }
 
 .logo {
